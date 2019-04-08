@@ -23,6 +23,7 @@ set -e
 : ${HUGO_VERSION="0.54"}
 : ${PHP_VERSION="5.6"}
 : ${GO_VERSION="1.12"}
+: ${PANDOC_VERSION="2.4"}
 
 REPO_URL=$1
 
@@ -57,6 +58,7 @@ docker run --rm \
 	-e "NETLIFY_VERBOSE=$NETLIFY_VERBOSE" \
 	-e "GO_VERSION=$GO_VERSION" \
 	-e "GO_IMPORT_PATH=$GO_IMPORT_PATH" \
+	-e "PANDOC_VERSION=$PANDOC_VERSION" \
 	-v $PWD/$T/scripts:/opt/buildhome/scripts \
 	-v $PWD/$T/repo:/opt/buildhome/repo \
 	-v $PWD/$T/cache:/opt/buildhome/cache \
